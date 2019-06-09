@@ -1,0 +1,27 @@
+group 'camel-example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
+    compile group: 'org.apache.camel', name: 'camel-spring-boot-starter', version: '2.17.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
